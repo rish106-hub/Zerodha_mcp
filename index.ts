@@ -1,31 +1,21 @@
 import { KiteConnect } from "kiteconnect";
 
 const apiKey = "7xxmn3o7fhsvzt2r";
-const apiSecret = "2atuietasplt3ptdkmvfep0k1mdjp92s";
-const requestToken = "dC8cu7UUckUiuO1T8b8bSx7Ybb61VwY4";
-let access_token = "";
+//const apiSecret = "2atuietasplt3ptdkmvfep0k1mdjp92s";
+//const requestToken = "V45U7umJNwB6M1b2086ISDq3z2JY7g1Z";
+let access_token = "a7S32Ql4MZyEkMtzL8d5dYD9gp5Nlt4p";
 
 const kc = new KiteConnect({ api_key: apiKey });
 console.log(kc.getLoginURL());
 async function init() {
   try {
-    await generateSession();
+    kc.setAccessToken(access_token)
     await getProfile();
   } catch (err) {
     console.error(err);
   }
 }
 
-async function generateSession() {
-  try {
-    const response = await kc.generateSession(requestToken, apiSecret);
-    console.log(response.access_token);
-    kc.setAccessToken(response.access_token);
-    console.log("Session generated:", response);
-  } catch (err) {
-    console.error("Error generating session:", err);
-  }
-}
 
 async function getProfile() {
   try {
