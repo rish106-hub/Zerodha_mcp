@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.11.4",
-    "kiteconnect": "^5.0.1"
+    "kiteconnect": "^5.3.0"
   },
   "name": "zerodha",
   "module": "index.ts",
